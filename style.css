@@ -23,7 +23,7 @@ header {
   font-size: 16px;
 }
 .search-form-button {
-  background-color: purple;
+  background-color: #f75282;
   padding: 15px 25px;
   border: none;
   border-radius: 6px;
@@ -45,6 +45,9 @@ main {
 p {
   font-size: 16px;
   line-height: 20px;
+}
+p strong {
+  color: #f75282;
 }
 .weather-app-container {
   display: flex;
