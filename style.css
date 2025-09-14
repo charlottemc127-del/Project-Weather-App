@@ -56,13 +56,14 @@ p strong {
   font-size: 88px;
   font-weight: bold;
   margin-left: 10px;
+  line-height: 88px;
 }
 .weather-app-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 .temperture-unit {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 28px;
 }
 footer {
