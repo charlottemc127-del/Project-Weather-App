@@ -56,4 +56,28 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
+function displayForcast() {
+  let forcast = document.querySelector("#forcast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forcastHtml = "";
+
+  days.forEach(function (day) {
+    forcastHtml =
+      forcastHtml +
+      `
+  <div class="weather-forcast-day">
+    <div class="weather-forcast-date">${day}</div>
+    <div class="weather-forcast-icon">☔</div>
+    <div class="weather-forcast-temperatures">
+      <span class="weather-forcast-temperature">
+        <strong>15°C</strong>
+      </span>
+      <span class="weather-forcast-temperature"> 9°C</span>
+    </div>
+  </div>
+`;
+  });
+  forcast.innerHTML = forcastHtml;
+}
 searchCity("Newcastle");
+displayForcast();
