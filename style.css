@@ -66,28 +66,28 @@ p strong {
   margin-top: 10px;
   font-size: 28px;
 }
-.forcast {
+.forecast {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
 }
-.weather-forcast-date {
+.weather-forecast-date {
   text-align: center;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   line-height: 20px;
 }
-.weather-forcast-icon {
+.weather-forecast-icon {
   font-size: 48px;
   text-align: center;
 }
-.weather-forcast-temperatures {
+.weather-forecast-temperatures {
   text-align: center;
   color: #f75282;
   display: flex;
   justify-content: center;
 }
-.weather-forcast-temperature {
+.weather-forecast-temperature {
   padding: 0 10px;
 }
 footer {

@@ -18,6 +18,7 @@ function updateWeatherInfo(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -56,28 +57,34 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-function displayForcast() {
-  let forcast = document.querySelector("#forcast");
+function getForecast(city) {
+  let apikey = "04atba3fbfaf6of3a11828de020976f3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecast = document.querySelector("#forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  let forcastHtml = "";
+  let forecastHtml = "";
 
   days.forEach(function (day) {
-    forcastHtml =
-      forcastHtml +
+    forecastHtml =
+      forecastHtml +
       `
-  <div class="weather-forcast-day">
-    <div class="weather-forcast-date">${day}</div>
-    <div class="weather-forcast-icon">☔</div>
-    <div class="weather-forcast-temperatures">
-      <span class="weather-forcast-temperature">
+  <div class="weather-forecast-day">
+    <div class="weather-forecast-date">${day}</div>
+    <div class="weather-forecast-icon">☔</div>
+    <div class="weather-forecast-temperatures">
+      <span class="weather-forecast-temperature">
         <strong>15°C</strong>
       </span>
-      <span class="weather-forcast-temperature"> 9°C</span>
+      <span class="weather-forecast-temperature"> 9°C</span>
     </div>
   </div>
 `;
   });
-  forcast.innerHTML = forcastHtml;
+  forecast.innerHTML = forecastHtml;
 }
 searchCity("Newcastle");
-displayForcast();
+displayForecast();
